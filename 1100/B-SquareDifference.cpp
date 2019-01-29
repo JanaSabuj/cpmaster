@@ -10,7 +10,6 @@ bool isPrime(long long int n){
 }
 
   int main() {
-    // cout<<"Hello World!";
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     long long int t;cin>>t;
@@ -27,3 +26,4 @@ bool isPrime(long long int n){
     }
     return 0;
 }
+// edited by soumalya_ju(god of Java)
