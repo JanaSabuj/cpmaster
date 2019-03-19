@@ -1,2 +1,3 @@
 # codeforces-cp
-My Personal solutions to codeforces , sorted by user submissions
+
+### All my submissions on Codeforces, added everyday 
