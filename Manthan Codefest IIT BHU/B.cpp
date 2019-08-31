@@ -54,12 +54,13 @@ signed main() {
 	s.clear();
 
 	for (int i = 1; i <= n; ++i) {
+		
 		if (s.size() != (i - 1)) {
 			break;
 		}
 
 		set<int> cntset = s;
-		
+
 		int count = i - 1;
 
 		for (int j = n; j >= i; j--) {
