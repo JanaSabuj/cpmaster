@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 7
+Contest name: Codeforces Round #547 (Div. 3)
+Rank: 3145
+Solved: 2
+Rating Change: +18
+New Rating: 1200

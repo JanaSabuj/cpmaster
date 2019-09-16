@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 3
+Contest name: Codeforces Round #529 (Div. 3)
+Rank: 4199
+Solved: 2
+Rating Change: -66
+New Rating: 1258

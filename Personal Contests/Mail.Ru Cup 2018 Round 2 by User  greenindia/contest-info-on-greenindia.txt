@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 1
+Contest name: Mail.Ru Cup 2018 Round 2
+Rank: 2181
+Solved: 1
+Rating Change: -55
+New Rating: 1445

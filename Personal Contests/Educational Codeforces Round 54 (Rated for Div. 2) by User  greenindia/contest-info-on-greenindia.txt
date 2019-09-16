@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 2
+Contest name: Educational Codeforces Round 54 (Rated for Div. 2)
+Rank: 3338
+Solved: 0
+Rating Change: -121
+New Rating: 1324

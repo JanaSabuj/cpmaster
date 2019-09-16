@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 8
+Contest name: Codeforces Round #548 (Div. 2)
+Rank: 4363
+Solved: 1
+Rating Change: -42
+New Rating: 1158
