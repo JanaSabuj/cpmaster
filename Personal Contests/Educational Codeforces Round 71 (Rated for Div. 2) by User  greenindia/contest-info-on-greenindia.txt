@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 24
+Contest name: Educational Codeforces Round 71 (Rated for Div. 2)
+Rank: 2238
+Solved: 3
+Rating Change: +22
+New Rating: 1490

@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 26
+Contest name: Codeforces Round #582 (Div. 3)
+Rank: 710
+Solved: 5
+Rating Change: +34
+New Rating: 1592

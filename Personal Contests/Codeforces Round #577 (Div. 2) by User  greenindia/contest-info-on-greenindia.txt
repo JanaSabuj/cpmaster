@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 20
+Contest name: Codeforces Round #577 (Div. 2)
+Rank: 2551
+Solved: 2
+Rating Change: -27
+New Rating: 1473

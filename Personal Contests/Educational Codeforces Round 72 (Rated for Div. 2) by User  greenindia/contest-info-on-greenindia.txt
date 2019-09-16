@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 27
+Contest name: Educational Codeforces Round 72 (Rated for Div. 2)
+Rank: 2257
+Solved: 2
+Rating Change: -2
+New Rating: 1590
