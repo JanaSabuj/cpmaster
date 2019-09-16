@@ -1,0 +1,7 @@
+Username: greenindia
+Contest no: 16
+Contest name: Codeforces Global Round 4
+Rank: 1870
+Solved: 4
+Rating Change: +30
+New Rating: 1526
