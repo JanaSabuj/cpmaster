@@ -1,0 +1,18 @@
+Problem URL: https://codeforces.com/contest/1234/problem/A
+I/O statements for A Equalize Prices Again 
+
+---------------------------------------------------
+Input
+3
+5
+1 2 3 4 5
+3
+1 2 2
+4
+1 1 1 1
+
+Output
+3
+2
+1
+---------------------------------------------------
