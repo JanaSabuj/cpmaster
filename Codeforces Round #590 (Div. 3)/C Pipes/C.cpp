@@ -15,7 +15,7 @@ using namespace std;
 #define PI acos(-1)
 
 //const int INF=1e9+5;//billion
-int primes[] = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89};
+int primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89};
 string alpha = "abcdefghijklmnopqrstuvwxyz";
 /*----------JU IS LOVE----------*/
 //int power(int a,int b,int m){int ans=1;while(b){if(b&1)ans=(ans*a)%m;b/=2;a=(a*a)%m;}return ans;}
@@ -23,11 +23,49 @@ string alpha = "abcdefghijklmnopqrstuvwxyz";
 
 
 signed main() {
-    
-	freopen("input.txt", "r", stdin);
+
+	// freopen("input.txt", "r", stdin);
 	crap;
- 	
- 	
+
+	int q;
+	cin >> q;
+
+	while (q--) {
+		int n;
+		cin >> n;
+
+		string arr[2];
+		cin>>arr[0]>>arr[1];
+
+
+		int row = 0;
+
+		int j = 0;
+		for( j=0; j<n; j++){
+			if(arr[row][j]== '1' or arr[row][j] == '2')
+				continue;
+			else{
+				//curved
+				if(arr[row^1][j] < '3'){
+					break;
+				}else{
+					row = row^1;
+					continue;
+				}
+
+			}
+		}
+
+		if(row == 1 and j == n)
+			cout << "YES" <<endl;
+		else
+			cout << "NO" <<endl;
+
+
+	}
+
+
+
 
 	return 0;
 }
