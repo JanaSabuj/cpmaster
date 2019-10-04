@@ -1,0 +1,33 @@
+Problem URL: https://codeforces.com/contest/1234/problem/C
+I/O statements for C Pipes 
+
+---------------------------------------------------
+Input
+6
+7
+2323216
+1615124
+1
+3
+4
+2
+13
+24
+2
+12
+34
+3
+536
+345
+2
+46
+54
+
+Output
+YES
+YES
+YES
+NO
+YES
+NO
+---------------------------------------------------
