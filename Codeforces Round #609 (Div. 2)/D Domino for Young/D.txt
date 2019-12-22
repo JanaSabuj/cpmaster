@@ -1,0 +1,11 @@
+Problem URL: https://codeforces.com/contest/1269/problem/D
+I/O statements for D Domino for Young 
+
+---------------------------------------------------
+Input
+5
+3 2 2 2 1
+
+Output
+4
+---------------------------------------------------
