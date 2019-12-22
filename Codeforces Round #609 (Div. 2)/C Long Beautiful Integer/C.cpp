@@ -15,7 +15,7 @@ using namespace std;
 #define PI acos(-1)
 
 //const int INF=1e9+5;//billion
-int primes[] = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89};
+int primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89};
 string alpha = "abcdefghijklmnopqrstuvwxyz";
 /*----------JU IS LOVE----------*/
 //int power(int a,int b,int m){int ans=1;while(b){if(b&1)ans=(ans*a)%m;b/=2;a=(a*a)%m;}return ans;}
@@ -23,11 +23,80 @@ string alpha = "abcdefghijklmnopqrstuvwxyz";
 
 
 signed main() {
-    
-	freopen("input.txt", "r", stdin);
+
+	// freopen("input.txt", "r", stdin);
 	crap;
- 	
- 	
+
+	int n, k;
+	cin >> n >> k;
+
+	string str;
+	cin >> str;
+
+	string temp;
+	for (int i = 0; i < k; i++) {
+		temp += str[i];
+	}
+
+	int j = 0;
+	for (int i = k; i < n; i++) {
+		temp += str[j];
+		j++;
+	}
+
+	// cout << temp << endl;	
+
+	int less = -1;
+	for(int i = k; i < n; i++){
+		if(temp[i] < str[i])
+		{
+			less = i;
+			break;
+		}
+	}
+
+	if(less == -1){
+		cout << n <<endl;
+		cout << temp <<endl;
+		return 0;
+	}
+
+
+	int f = 0;
+	for (int i = k; i < less; i++) {
+		if (temp[i] > str[i]) {
+			f = 1;
+			break;
+		}  
+	}
+
+	if (f) {
+		cout << n <<endl;
+		cout << temp << endl;
+		return 0;
+	}
+
+	int ptr = k;
+	for (int i = k; i < n; i++) {
+		
+		if(temp[i] < str[i]){
+			ptr = i;
+		}
+	}
+
+	// cout << ptr <<endl;
+	// cout << temp[ptr]  <<endl;
+
+	cout << n <<endl;
+	for(int i = 0; i < n; i++){
+		if((i == (ptr - k)) or i == ptr)
+			cout << (temp[ptr] - '0' + 1);
+		else if((i > (ptr - k )and i < k) or (i > ptr))
+			cout << "0" ;
+		else
+			cout << temp[i];
+	}
+	cout <<endl;
 
 	return 0;
 }
