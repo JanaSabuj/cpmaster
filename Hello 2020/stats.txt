@@ -1,0 +1,9 @@
+AC Stats: 
+
+Problem 1 - Accepted: 8115 Tried: 8260 Success: 98.24%
+Problem 2 - Accepted: 4221 Tried: 5792 Success: 72.88%
+Problem 3 - Accepted: 2967 Tried: 3043 Success: 97.5%
+Problem 4 - Accepted: 1030 Tried: 2067 Success: 49.83%
+Problem 5 - Accepted: 273 Tried: 364 Success: 75.0%
+Problem 6 - Accepted: 18 Tried: 57 Success: 31.58%
+Problem 7 - Accepted: 4 Tried: 14 Success: 28.57%
