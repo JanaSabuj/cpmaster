@@ -122,3 +122,4 @@ signed main() {
 
 	return 0;
 }
+// 4d node dfs + (3d visited array + 3d restricted array) of letters
