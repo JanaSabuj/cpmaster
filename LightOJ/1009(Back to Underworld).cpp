@@ -61,7 +61,7 @@ void solve(int tc) {
 
 				for (auto u : adj[x]) {
 					if (!adj[u].empty() and  color[u] == -1 ) {
-						color[u] = color[x]	 ^ 1;
+						color[u] = color[x] ^ 1;
 						if (color[u] == 0)
 							zero++;
 						else
