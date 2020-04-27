@@ -97,3 +97,4 @@ signed main() {
 
 	return 0;
 }
+// 2 color a bipartite graph + graph component max color concept
