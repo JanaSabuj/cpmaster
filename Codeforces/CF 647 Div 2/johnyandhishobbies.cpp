@@ -26,47 +26,39 @@ void print1d(const vector<int>& vec) {for (auto val : vec) {cout << val << " ";}
 
 void print2d(const vector<vector<int>>& vec) {for (auto row : vec) {for (auto val : row) {cout << val << " ";} cout << endl;}}
 
-int binpow(int a, int b) {
-	int res = 1;
-	while (b) {
-		if (b & 1)
-			res = res * a;
-		a = a * a;
-		b /= 2;
-	}
-
-	return res;
-}
-
-int getVal(int x) {
-	if (x == 0)
-		return 0;
-	int p = log2(x);
-	return binpow(2, p + 1) - 1;
-}
-
-int drop(int n) {
-	string ans = "";
-	while (n) {
-		int dig = n % 2;
-		ans += to_string(dig);
-		n /= 2;
-	}
-
-	int req = 0;
-	for (int i = 0; i < ans.size(); i++) {
-		if (ans[i] == '1')
-			req += getVal(binpow(2, i));
-	}
-
-	return req;
-}
-
 void solve() {
 	int n;
 	cin >> n;
 
-	cout << drop(n) << endl;
+	unordered_map<int, int> mp;
+	vi arr(n);
+	for (int i = 0; i < n; ++i) {
+		cin >> arr[i];
+		mp[arr[i]]++;
+	}
+
+	for (int k = 1; k <= 1024; k++) {
+		unordered_map<int, int> kalpha;
+		bool flag = true;
+
+		for (auto x : arr) {
+			kalpha[x ^ k]++;
+		}
+
+		for (auto x : mp) {
+			if (kalpha[x.first] != x.second) {
+				flag = false;
+				break;
+			}
+		}
+
+		if (flag) {
+			cout << k << endl;
+			return;
+		}
+	}
+
+	cout << -1 << endl;
 }
 
 signed main() {
