@@ -1,89 +1,48 @@
-/*--------------------------"SABUJ-JANA"------"JADAVPUR UNIVERSITY"--------*/
-/*-------------------------------@greenindia-----------------------------------*/
-//
-//		  _____       _           _        _
-//		 / ____|     | |         (_)      | |
-//		| (___   __ _| |__  _   _ _       | | __ _ _ __   __ _
-//		 \___ \ / _` | '_ \| | | | |  _   | |/ _` | '_ \ / _` |
-//		 ____) | (_| | |_) | |_| | | | |__| | (_| | | | | (_| |
-//		|_____/ \__,_|_.__/ \__,_| |  \____/ \__,_|_| |_|\__,_|
-//		                        _/ |
-//		                       |__/
-/*---------------------- Magic. Do not touch.-----------------------------*/
-/*------------------------------God is Great/\---------------------------------*/
+/*
+Sabuj Jana / @greenindia
+https://www.janasabuj.github.io
+*/
 #include <bits/stdc++.h>
 using namespace std;
 #define crap ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-//cout<<fixed<<showpoint<<setprecision(12)<<ans<<endl;
 #define int long long int
 #define double long double
-#define PI acos(-1)
 typedef vector<int> vi;
 typedef vector<vector<int>> vvi;
-
+#define endl "\n"
 void print1d(const vector<int>& vec) {for (auto val : vec) {cout << val << " ";} cout << endl;}
-
 void print2d(const vector<vector<int>>& vec) {for (auto row : vec) {for (auto val : row) {cout << val << " ";} cout << endl;}}
+const int N = 105;
+int n, x;
+vi arr(N);
+int t[1000005];
 
-vi arr;
-bool isPossible;
-int mx;
-
-const int N = 1e6 + 7;
-int dp[N];
-
-int minCoins(int store) {
-	if (store == 0) {
-		isPossible = true;
+int dp(int x) {
+	//
+	if (x < 0)
+		return INT_MAX;
+	if (x == 0)
 		return 0;
-	}
+	if (t[x] != -1)
+		return t[x];
 
-	if (dp[store] != -1)
-		return dp[store];
-
-	int val = mx;
-	int c;
-	for (auto coin : arr) {
-		if (store - coin >= 0) {
-			c = 1 + minCoins(store - coin);
-			val = min(val, c);
-		}
-	}
-
-	return dp[store] =  val;
-}
-
-void solve() {
-	int n, total;
-	cin >> n >> total;
-
-	vi a(n);
+	int coins = INT_MAX;
 	for (int i = 0; i < n; ++i) {
-		cin >> a[i];
+		coins = min(coins, 1 + dp(x - arr[i]));
 	}
 
-	arr = a;
-	isPossible = false;
-	mx = total;
-	memset(dp, -1, sizeof(dp));
-	int cs = minCoins(total);
-
-	if (isPossible)
-		cout << cs << endl;
-	else
-		cout << -1 << endl;
+	return t[x] = coins;
 }
 
 signed main() {
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("error.txt", "w", stderr);
-#endif
 	crap;
-
-	solve();
-
-
+	cin >> n >> x;
+	for (int i = 0; i < n; ++i) {
+		cin >> arr[i];
+	}
+	memset(t, -1, sizeof(t));
+	int val = dp(x);
+	cout << (val == INT_MAX ? -1 : val) << endl;
 
 	return 0;
 }
