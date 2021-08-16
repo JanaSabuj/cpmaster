@@ -67,3 +67,8 @@ signed main() {
 
 	return 0;
 }
+
+/*
+Also a LC problem. K concatenation.
+Do Kadane for k=1 and k=2. Then observations for k > 2.
+*/
