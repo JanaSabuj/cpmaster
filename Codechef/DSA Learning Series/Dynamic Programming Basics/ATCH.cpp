@@ -4,7 +4,6 @@ https://www.janasabuj.github.io
 */
 #include <bits/stdc++.h>
 using namespace std;
-#define SABUJ_JANA_WF 1
 #define crap ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
 #define int long long int
 #define double long double
@@ -16,6 +15,7 @@ void print2d(const vector<vector<int>>& vec) {for (auto row : vec) {for (auto va
 const int mod = 1e9 + 7;
 int n;
 int arr[100005];
+// kadane
 void solve() {
 	cin >> n;
 	for (int i = 0; i < n; ++i) {
@@ -48,11 +48,9 @@ void solve() {
 signed main() {
 	crap;
 
-
 	int t = 1;
 	cin >> t;
 	while (t--) solve();
-
 
 	return 0;
 }
