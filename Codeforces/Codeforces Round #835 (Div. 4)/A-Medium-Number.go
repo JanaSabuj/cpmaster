@@ -1,4 +1,4 @@
-package main
+package a
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ var t int
 func solve() {
 	vecs := [3]int{}
 	fmt.Scanln(&vecs[0], &vecs[1], &vecs[2])
-	sort.Ints(vecs[:])
+	sort.Ints(vecs[:]) // sorting a slice
 	fmt.Println(vecs[1])
 }
 
