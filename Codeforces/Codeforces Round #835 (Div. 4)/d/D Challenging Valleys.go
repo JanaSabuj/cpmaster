@@ -12,7 +12,7 @@ var out *bufio.Writer
 var t, n int
 var ans bool
 
-func solve() {
+func solve1() {
 	fmt.Fscan(in, &n)
 	vec := make([]int, n)
 	nondup := make([]int, 0)
@@ -52,6 +52,40 @@ func solve() {
 	}
 }
 
+// count no of valleys
+// - - - - - - - -
+
+func solve2() {
+	// if i == 0 and vec[i] < vec[i+1]
+	// if i == n-1 and vec[i-1] > vec[i]
+	// if(vec[i-1] > vec[i]  and vec[i] < vec[i+1])
+	fmt.Fscan(in, &n)
+	vec := make([]int, n)
+	nondup := make([]int, 0)
+
+	for i := 0; i < n; i++ {
+		fmt.Fscan(in, &vec[i])
+		if i == 0 {
+			nondup = append(nondup, vec[i])
+		} else if vec[i] != vec[i-1] {
+			nondup = append(nondup, vec[i])
+		}
+	}
+
+	num_valleys := 0
+	for i := 0; i < n; i++ {
+		if (i == 0 || nondup[i-1] > nondup[i]) && (i == n-1 || nondup[i] < nondup[i+1]) {
+			num_valleys++
+		}
+	}
+
+	if num_valleys == 1 {
+		fmt.Fprintln(out, "YES")
+	} else {
+		fmt.Println(out, "NO")
+	}
+}
+
 func main() {
 	file, err := os.Open("/Users/sabuj.jana/projects/cpmaster/Codeforces/Codeforces Round #835 (Div. 4)/input.txt")
 	if err != nil {
@@ -59,14 +93,14 @@ func main() {
 	}
 	defer file.Close()
 
-	// in = bufio.NewReader(file)
-	in = bufio.NewReader(os.Stdin)
+	in = bufio.NewReader(file)
+	// in = bufio.NewReader(os.Stdin)
 	out = bufio.NewWriter(os.Stdout)
 	defer out.Flush()
 
 	fmt.Fscan(in, &t)
 	for t > 0 {
-		solve()
+		solve1()
 		t--
 	}
 }
