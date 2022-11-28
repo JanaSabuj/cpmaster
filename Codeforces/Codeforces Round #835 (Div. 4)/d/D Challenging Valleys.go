@@ -100,7 +100,7 @@ func main() {
 
 	fmt.Fscan(in, &t)
 	for t > 0 {
-		solve1()
+		solve2()
 		t--
 	}
 }
