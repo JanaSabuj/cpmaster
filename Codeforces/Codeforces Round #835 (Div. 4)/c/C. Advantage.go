@@ -4,11 +4,27 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 )
 
 var in = bufio.NewReader(os.Stdin)
 var t, n int
+
+func get12max(vecs []int) (mx1 int, mx2 int) {
+	mx1, mx2 = -1, -1
+	x := len(vecs)
+
+	// x <- mx1 <- mx2 rest
+	for i := 0; i < x; i++ {
+		if vecs[i] > mx1 {
+			mx2 = mx1
+			mx1 = vecs[i]
+		} else if vecs[i] > mx2 {
+			mx2 = vecs[i]
+		}
+	}
+
+	return mx1, mx2
+}
 
 func solve() {
 	out := bufio.NewWriter(os.Stdout)
@@ -21,9 +37,10 @@ func solve() {
 		fmt.Fscan(in, &vecs[i])
 	}
 	copy(cpy, vecs)
-	sort.Ints(vecs)
+	// sort.Ints(vecs)
 
-	mx1, mx2 := vecs[n-1], vecs[n-2]
+	// mx1, mx2 := vecs[n-1], vecs[n-2]
+	mx1, mx2 := get12max(vecs)
 	ans := make([]int, n)
 	for i := 0; i < n; i++ {
 		if cpy[i] == mx1 {
