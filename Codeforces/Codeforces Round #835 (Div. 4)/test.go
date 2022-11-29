@@ -11,9 +11,12 @@ func get12max(vecs []int) (mx1 int, mx2 int) {
 		if vecs[i] > mx1 {
 			mx2 = mx1
 			mx1 = vecs[i]
-		} else if vecs[i] > mx2 {
+		} else if vecs[i] > mx2 && vecs[i] != mx1 {
+			// hack to prevent duplicate max, smax
 			mx2 = vecs[i]
 		}
+
+		fmt.Println("max1 - ", mx1, "max2 - ", mx2)
 	}
 
 	return mx1, mx2
