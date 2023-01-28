@@ -19,27 +19,35 @@ int dp(int x) {
 // 1. ----- Staircase problem ------
 // find total number of ways
 int n;// global
-int dp(int x) {
+int cache[1001]; // dp array
+int rec(int x) {
 	// pruning
 	if (x > n) return 0;// invalid cases in counting problems generally return 0
 
 	// base case
 	if (x == n) return 1; // generally, in counting problems, base case returns 1 or 0
 
+	// dp
+	if (cache[x] != -1)
+		return cache[x];
+
 	// compute
 	int ways = 0;
 	for (step = 1; step <= 3; step++) {
 		if (x + step <= n) {
-			ways += dp(x + step);
+			ways += rec(x + step);
 		}
 	}
 
-	return ways;
+	return cache[x] = ways;// updt dp
 }
-// Ans = dp(1)
+
+memset(cache, -1, sizeof(cache));// init dp as -1
+// Ans = rec(1)
 
 // 2. ---- N Queen Problem ------
 // find total number of ways
+// to memoise it, we can do dp(level, queens) -> but queens is always unique, so it is a backtracking prob and not dp
 int N;
 int queen[20];
 
@@ -133,4 +141,3 @@ int rec(int level) {
 }
 
 // Ans: rec(0)
-
