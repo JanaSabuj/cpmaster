@@ -1,0 +1,4 @@
+> Use C/C++ formatter
+> Use /opt/homebrew/g++-12 formatter
+> g++ -o a.out template.cpp 
+> ./a.out
